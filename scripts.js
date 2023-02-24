@@ -48,9 +48,13 @@ function init(){
     upButton.addEventListener("click", function(event){
         // console.log(parseInt(rocketImage.style.bottom));
         let originalPositionUp = parseInt(rocketImage.style.bottom);
+        if (originalPositionUp > 240){
+            originalPositionUp = parseInt(rocketImage.style.bottom);
+        } else {
         let newPositionUp = originalPositionUp + 10;
         let newPositionUpPixels = newPositionUp +"px";
         rocketImage.style.bottom = newPositionUpPixels;
+        }
         let originalHeight = parseInt(spaceShuttleHeight.innerHTML);
         let newHeight = originalHeight + 10000;
         spaceShuttleHeight.innerHTML = newHeight;
@@ -58,9 +62,13 @@ function init(){
 
     downButton.addEventListener("click", function(event){
         let originalPosition = parseInt(rocketImage.style.bottom);
+        if (originalPosition < 0){
+            originalPosition = parseInt(rocketImage.style.bottom);
+        } else {
         let newPosition = originalPosition - 10;
         let newPositionPixels = newPosition + "px";
         rocketImage.style.bottom = newPositionPixels;
+        }
         let originalHeight = parseInt(spaceShuttleHeight.innerHTML);
         let newHeight = originalHeight -10000;
         spaceShuttleHeight.innerHTML = newHeight;
@@ -82,7 +90,7 @@ function init(){
 
     // function pastMarginLimitBottom (rocketImage.style.bottom){
     //     let marginNumber = parseInt(rocketImage.style.bottom);
-    //     if (marginNumber> )
+    //     if (marginNumber<flightDisplay.bottom )
         
     // }
 }
